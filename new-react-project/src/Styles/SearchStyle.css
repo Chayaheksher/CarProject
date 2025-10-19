@@ -1,0 +1,20 @@
+.search {
+    display: flex;
+    justify-content: center; /* מיישר למרכז */
+    align-items: center; /* ממקם אותם באותו גובה */
+    gap: 10px; /* רווח ביניהם */
+    flex-wrap: wrap; /* במקרה של מסך קטן, הם יעברו לשורה הבאה */
+    width: 100%; /* מבטיח שהקונטיינר יתפוס את כל הרוחב */
+    direction: rtl;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.filter-button {
+    height: 40px; /* או הגובה המתאים */
+    margin: 1px;
+}
+
+.clear-button {
+    height: 40px; /* או הגובה המתאים */
+    margin: 1px;
+}

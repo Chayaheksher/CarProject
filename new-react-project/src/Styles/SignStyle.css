@@ -1,0 +1,36 @@
+.signin-dialog {
+    direction: rtl; /* ודא שהכיוון הוא מימין לשמאל */
+}
+
+.signin-dialog .dia {
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-dialog input, 
+.signin-dialog .p-inputtext, 
+.signin-dialog .p-password {
+    margin: 0.5rem 0;
+    width: auto; /* אפשר להוריד את ה-100% כדי שלא יתפרסו יותר מדי */
+    min-width: 300px; /* קבע מינימום לרוחב כדי שהאינפוטים לא יהיו קטנים מדי */
+    height: 40px; /* קבע גובה אחיד לכל האינפוטים */
+}
+
+.signin-dialog label {
+    margin: 0.5rem 0;
+    display: block; /* ודא שהלייבל בתור חדש */
+}
+
+.signin-dialog button {
+    margin-top: 1rem;
+    display: block;
+    width: 100%; /* הפוך את הכפתור לרוחב מלא */
+}
+
+.signin-dialog .link {
+    margin-top: 2rem;
+    display: block;
+    text-align: center; /* מרכז את הלינק */
+}
+

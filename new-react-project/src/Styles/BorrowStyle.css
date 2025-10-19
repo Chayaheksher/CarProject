@@ -1,0 +1,16 @@
+.tbl-container {
+    max-width: 80%; /* מגביל את הרוחב */
+    margin: 40px auto; /* ממרכז ומרחיק מלמעלה */
+    direction: rtl; /* יישור לימין */
+  }
+  
+  .custom-table {
+    width: 100%; /* נותן שליטה על הרוחב */
+    border: white solid 0.2rem;
+    border-radius: 8px; /* מעגל פינות לטבלה */
+    box-shadow: 0px 4px 10px rgb(134, 234, 221); /* צל עדין */
+  }
+  
+  .col{
+    text-align: start;
+  }

@@ -1,0 +1,19 @@
+.return-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .credit-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
