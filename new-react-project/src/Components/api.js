@@ -26,16 +26,15 @@ export const allCars = (filterType, query) => {
 export const updateCar = (car, token) => {
     try {
         if (!token) {
-            // שגיאה: הלקוח אינו מחובר
             return false;
         }
         let headers = {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data' // נוסיף כותרת עבור multipart/form-data
+            'Content-Type': 'multipart/form-data'
         };
         return axios.patch(`http://localhost:3030/displayCars/${car.get('_id')}`, car, { headers });
     } catch (error) {
-        console.error("Error updating car:", error); // לוג שגיאה
+        console.error("Error updating car:", error);
         return null;
     }
 };
@@ -43,7 +42,6 @@ export const updateCar = (car, token) => {
 export const addCar = (car, token) => {
     try {
         if (!token) {
-            // שגיאה: הלקוח אינו מחובר
             return false;
         }
 
@@ -61,7 +59,6 @@ export const addCar = (car, token) => {
 export const deleteTheCar = (carId, token) => {
     try {
         if (!token) {
-            // שגירה הלקוח אינו מחובר
             return false
         }
         let headers = {
@@ -92,7 +89,6 @@ export const allDriveTypes = () => {
 export const updateDriveType = (driveType, token) => {
     try {
         if (!token) {
-            // שגירה הלקוח אינו מחובר
             return false
         }
         let headers = {
@@ -107,7 +103,6 @@ export const updateDriveType = (driveType, token) => {
 export const addNewModel = (model, token) => {
     try {
         if (!token) {
-            // שגירה הלקוח אינו מחובר
             return false
         }
         let headers = {
@@ -130,7 +125,6 @@ export const allCarTypes = () => {
 export const allBorrows = (userId, token) => {
     try {
         if (!token) {
-            // שגירה הלקוח אינו מחובר
             return false
         }
         let headers = {
@@ -145,7 +139,6 @@ export const allBorrows = (userId, token) => {
 export const addBorrow = (borrow, token) => {
     try {
         if (!token) {
-            // שגירה הלקוח אינו מחובר
             return false
         }
         let headers = {
@@ -160,7 +153,6 @@ export const addBorrow = (borrow, token) => {
 export const returnBorrow = (returnB, token) => {
     try {
         if (!token) {
-            // שגירה הלקוח אינו מחובר
             return false
         }
         let headers = {

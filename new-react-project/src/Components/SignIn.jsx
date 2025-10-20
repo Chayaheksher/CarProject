@@ -31,13 +31,11 @@ export const SignIn = () => {
             .then((res) => {
                 console.log(res, "איפה הטוקן???????");
                 swal(`שלום ${res.data.user.userName}!`, 'הצלחת להתחבר', 'success')
-                // localStorage.setItem('user', JSON.stringify(res.data.user));
-                const token = res.data.token; // ודאי שהטוקן נמצא במיקום הנכון
+                const token = res.data.token;
                 dispatch(setToken(token))
                 dispatch(setUser(res.data.user))
 
                 navigate(`/cars`)
-                // window.location.reload(); // רענון הדף כדי לעדכן את הניווט
                 closeDialog();
             })
             .catch((err) => {

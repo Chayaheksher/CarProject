@@ -1,5 +1,4 @@
 import express from 'express'
-// import {addModel, allModels} from '../controllers/carModels.js'
 import { allModels ,addModel } from '../controllers/carModels.js';
 import { checkAuth } from "../middlewares.js";
 

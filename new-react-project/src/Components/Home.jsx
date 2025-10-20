@@ -29,7 +29,6 @@ export const Home = () => {
     return <>
         <div className="home-container">
             <div className="car-logo">
-                {/* <Image src="CarLogo.jpg" alt="Image" width="250" preview /> */}
                 <div className="title-box">
                     <h1>ברוכים הבאים להשכרת רכבים</h1>
                 </div>            </div>

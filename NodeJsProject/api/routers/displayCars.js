@@ -5,7 +5,6 @@ import { deleteMiddlware, checkAuth, upload } from "../middlewares.js";
 const router = express.Router();
 
 router.get('/', getCars)
-// router.get('/filter', filterCars);
 router.delete('/:carId',checkAuth,deleteMiddlware, deleteCar)
 router.post('/',checkAuth,upload.single('image'), addCar);
 router.patch('/:carId',checkAuth,upload.single('image'), updateCarDetails)

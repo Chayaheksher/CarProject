@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Dropdown } from 'primereact/dropdown';
 import { AutoComplete } from "primereact/autocomplete";
 import { Button } from 'primereact/button';
-import { Tooltip } from 'primereact/tooltip'; // Importing Tooltip
+import { Tooltip } from 'primereact/tooltip';
 import '../Styles/SearchStyle.css';
 
 export const SearchCombo = ({ filters, fetchFilterData, filterData, fetchResultsFromServer }) => {
@@ -22,9 +22,8 @@ export const SearchCombo = ({ filters, fetchFilterData, filterData, fetchResults
     }, [filterData]);
 
     const search = (event) => {
-        // אם לא נבחר סוג סינון, לא נבצע חיפוש
         if (selectedFilter==null) {
-            setItems([]); // או אפשר לשים הערה למשתמש
+            setItems([]);
             return;
         }
 
@@ -45,7 +44,7 @@ export const SearchCombo = ({ filters, fetchFilterData, filterData, fetchResults
 
     const executeFilter = () => {
         if (value) {
-            fetchResultsFromServer(selectedFilter, value); // מבצע סינון
+            fetchResultsFromServer(selectedFilter, value);
         }
     };
 
@@ -76,18 +75,18 @@ export const SearchCombo = ({ filters, fetchFilterData, filterData, fetchResults
                     onSelect={(e) => handleSelect(e.value)}
                     placeholder="הקלד לחיפוש..."
                     style={{ direction: "rtl" }}
-                    disabled={selectedFilter == null} // Disable AutoComplete if no filter selected
+                    disabled={selectedFilter == null}
                 />
-                <Tooltip target=".filter-button" content="סנן" position="top"/> {/* Tooltip for filter button */}
+                <Tooltip target=".filter-button" content="סנן" position="top"/>
                 <Button 
-                    label=" " // Leaving the label blank for just the icon
-                    icon="pi pi-check" // Icon for 'V'
+                    label=" "
+                    icon="pi pi-check"
                     className="p-button-rounded p-button-text filter-button" 
-                    onClick={executeFilter} // Call executeFilter on click
+                    onClick={executeFilter}
                 />
-                <Tooltip target=".clear-button" content="נקה סינונים" position="top"/> {/* Tooltip for clear button */}
+                <Tooltip target=".clear-button" content="נקה סינונים" position="top"/> 
                 <Button 
-                    label=" " // Leaving the label blank for just the icon
+                    label=" "
                     icon="pi pi-times" 
                     className="p-button-rounded p-button-text clear-button" 
                     onClick={clearFilter} 

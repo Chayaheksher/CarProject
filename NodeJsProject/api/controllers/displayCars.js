@@ -1,11 +1,8 @@
-//משותף לשתיהם
 import Car from '../models/car.js';
 import CarModels from '../models/carModels.js';
 import CarTypes from '../models/carTypes.js';
 import DriveType from '../models/driveType.js';
 
-// הצגת כל הרכבים עם אפשרויות הסינון
-//לבדוק כי לכאורה הכי טוב לעשות הסינון בריאקט
 export const getCars = (req, res) => {
     const { filterType, params } = req.query;
     console.log(filterType, params);
@@ -56,10 +53,9 @@ export const getCars = (req, res) => {
                     );
                     break; 
                 default:
-                    filteredCars = c; // במקרה שאין סינון, כל המכוניות
+                    filteredCars = c;
                     break;
             }
-            // מחזיר תמיד את c או filteredCars
             res.status(200).send({ c: filteredCars });
         })
         .catch(error => {
@@ -68,8 +64,6 @@ export const getCars = (req, res) => {
 };
 
 
-
-//הוספת רכב
 export const addCar = (req, res) => {
 
     const { licenseNumber, carModelsId, numberOfSeats, image, year, isGears, driveTypesId, 
@@ -98,7 +92,7 @@ export const addCar = (req, res) => {
         res.status(500).send({message: error.message})
     })
 }
-//מחיקת רכב
+
 export const deleteCar = (req, res) => {
     const {carId} = req.params
     Car.findByIdAndDelete(carId)
@@ -110,28 +104,13 @@ export const deleteCar = (req, res) => {
     })
 }
 
-//עדכון פרטי רכב
-// export const updateCarDetails = (req, res) => {
-//     const {carId} = req.params
-//     const { numberOfSeats, image, pricePerHour, balanceInLiters, street, city, isAvailable } = req.body;
 
-//     Car.findByIdAndUpdate(carId, req.body, {new:true})
-//     .then(c => {
-//         res.status(200).send({ message: `update car ${c._id} succeed!`, c })
-//     })
-//     .catch(error => {
-//         res.status(500).send({message: error.message})
-//     })
-// }
-// עדכון פרטי רכב
 export const updateCarDetails = (req, res) => {
     const { carId } = req.params;
     const { numberOfSeats, pricePerHour, balanceInLiters, street, city, isAvailable } = req.body;
 
-    // אם יש קובץ בתגובה, נעדכן את כתובת התמונה
-    const imageUrl = req.file ? `/uploads/${req.file.filename}` : ""; // שמירת כתובת התמונה
+    const imageUrl = req.file ? `/uploads/${req.file.filename}` : ""; 
 
-    // הכנת אובייקט העדכון
     const updateData = {
         numberOfSeats,
         pricePerHour,
@@ -141,12 +120,10 @@ export const updateCarDetails = (req, res) => {
         isAvailable
     };
 
-    // אם יש כתובת תמונה, נוסיף אותה לאובייקט העדכון
     if (imageUrl) {
         updateData.image = imageUrl;
     }
 
-    // עדכון הרכב בבסיס הנתונים
     Car.findByIdAndUpdate(carId, updateData, { new: true })
         .then(c => {
             if (!c) {
@@ -160,7 +137,6 @@ export const updateCarDetails = (req, res) => {
 };
 
 
-//שליפת כל סוגי רכב
 export const allCarTypes = (req, res) => {
     CarTypes.find()
     .then(ct=>{
@@ -170,133 +146,3 @@ export const allCarTypes = (req, res) => {
         res.status(500).send({message: error.message})
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//סינון רכבים תוך כדי שליפה
-// export const filterCars = async (req, res) => {
-
-//     const { filterType, params } = req.query
-
-//     console.log("Params:", params);
-//     const type = Number(filterType)
-//     console.log("num: ", type);
-//     switch (type) {
-//         case 1:
-//             Car.find({ 'carModelsId.model': { $eq: params } })
-//             .populate([
-//                 { 
-//                   path: 'carModelsId', 
-//                   select: 'company model', 
-//                   populate: { path: 'carTypesId' } 
-//                 },
-//                 { path: 'driveTypesId' }
-//             ])
-//             .then(c => {
-//                 console.log(c); // בדיקה אם נמצאו תוצאות
-//                 res.status(200).send({ c });
-//             })
-//             .catch(error => {
-//                 res.status(500).send({ error: error.message });
-//             });        
-//             break;
-//         case 2:
-//             // execute case y code block
-//             break;
-//         case 3:
-//             // execute case y code block
-//             break;
-//         case 4:
-//             //jnk
-//             break;
-//         case 5:
-//             //nkjnn
-//             break;
-//         default:
-//        res.status(400).send({ message: "Invalid filter type" });
-//     }
-// }
-
-
-// export const filterCars = async (req, res) => {
-//     const { filterType, params } = req.query
-
-//     console.log("Params:", params);
-//     const type = Number(filterType)
-//     console.log("num: ", type);
-
-//     try {
-//         switch (type) {
-//             case 1:
-//                 const result = await Car.find({ 'carModelsId.model': { $eq: params } })
-//                     .populate([
-//                         { 
-//                           path: 'carModelsId', 
-//                           select: 'company model', 
-//                           populate: { path: 'carTypesId' } 
-//                         },
-//                         { path: 'driveTypesId' }
-//                     ]).exec();
-
-//                 console.log(result); // בדיקה אם נמצאו תוצאות
-//                 res.status(200).send({ result });
-//                 break;
-//             case 2:
-//                 // execute case y code block
-//                 break;
-//             case 3:
-//                 // execute case y code block
-//                 break;
-//             case 4:
-//                 //jnk
-//                 break;
-//             case 5:
-//                 //nkjnn
-//                 break;
-//             default:
-//                 res.status(400).send({ message: "Invalid filter type" });
-//         }
-//     } catch (error) {
-//         res.status(500).send({ error: error.message });
-//     }
-// }
-
-
-
-// export const filterCars = async (req, res) => {
-//     const { filterType, params } = req.query
-
-//     const carModel = await carModels.findOne({ model: params }).exec();
-//     if (carModel) {
-//         const cars = await Car.find({ carModelsId: carModel._id }).exec();
-    
-//         console.log("Cars Found without populate:", cars);
-//         const populatedCars = await Car.populate(cars, [
-//             { 
-//               path: 'carModelsId', 
-//               select: 'company model', 
-//               populate: { path: 'carTypesId' } 
-//             },
-//             { path: 'driveTypesId' }
-//         ]);
-    
-//         console.log("Cars Found with populate:", populatedCars);
-//         res.status(200).send({ populatedCars });
-//     } else {
-//         console.log("Car model not found for params:", params);
-//         res.status(404).send({ message: "Car model not found" });
-//     }
-// }

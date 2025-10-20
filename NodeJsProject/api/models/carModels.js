@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const carModelsSchema = mongoose.Schema({
-    // _id: mongoose.Schema.Types.ObjectId,
     company: {
         type: String,
         require: true,

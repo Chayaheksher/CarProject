@@ -60,7 +60,6 @@ export const DisplayModels = () => {
     ];
 
     const filterFunc = (selectedFilter, value) => {
-        // setData(saveTheData)
         if (selectedFilter === null && value === '') {
             fetchModels()
         }
@@ -80,11 +79,10 @@ export const DisplayModels = () => {
         }
     }
     return <>
-        {/* <h1 style={{ textAlign: 'center', color: 'teal', margin: '20px 0', fontSize: '2.5rem' }}> דגמי רכב</h1> */}
         <SearchCombo
             filters={filters}
             fetchFilterData={fetchFilterData}
-            filterData={currentFilterData} // ודא שזה מעביר את הנתונים הנכונים
+            filterData={currentFilterData}
             fetchResultsFromServer={filterFunc}
         />
         <Button

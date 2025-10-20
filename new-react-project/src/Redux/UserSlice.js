@@ -22,7 +22,7 @@ const userSlice = createSlice({
             return { ...state, ...action.payload };
         },
         setToken: (state, action) => {
-            state.token = action.payload; // עדכון הטוקן
+            state.token = action.payload;
         },
     }
 })

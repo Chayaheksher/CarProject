@@ -1,7 +1,5 @@
 import CarModels from '../models/carModels.js'
 
-
-//צפיה בכל הדגמים
 export const allModels = (req, res) => {
     CarModels.find()
     .populate({path: 'carTypesId'})
@@ -13,7 +11,6 @@ export const allModels = (req, res) => {
     })
 }
 
-//הוספת דגם
 export const addModel = (req, res) => {
     const {company, model, carTypesId} = req.body
     const newModel = new CarModels({

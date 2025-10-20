@@ -9,7 +9,6 @@ export const Nav = () => {
     return (
         <>
             <div className="nav-container">
-                {/* לוגו בצד ימין שמוביל לדף הבית */}
                 <Link to="/home" className="logo-container">
                     <img src="/CarLogo.jpg" alt="Car Logo" className="nav-logo" />
                 </Link>

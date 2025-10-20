@@ -7,7 +7,6 @@ import {
 
 const router = express.Router();
 
-// router.get('/', signIn)
 router.get('/:identity/:phone/:password', signIn);
 router.post('/', signUp)
 

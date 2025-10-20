@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const returnsSchema = mongoose.Schema({
-    // _id: mongoose.Schema.Types.ObjectId,
     borrowId: {
         type: mongoose.Types.ObjectId,
         require: true,

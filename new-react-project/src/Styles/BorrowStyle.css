@@ -1,14 +1,14 @@
 .tbl-container {
-    max-width: 80%; /* מגביל את הרוחב */
-    margin: 40px auto; /* ממרכז ומרחיק מלמעלה */
-    direction: rtl; /* יישור לימין */
+    max-width: 80%;
+    margin: 40px auto;
+    direction: rtl;
   }
   
   .custom-table {
-    width: 100%; /* נותן שליטה על הרוחב */
+    width: 100%;
     border: white solid 0.2rem;
-    border-radius: 8px; /* מעגל פינות לטבלה */
-    box-shadow: 0px 4px 10px rgb(134, 234, 221); /* צל עדין */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgb(134, 234, 221);
   }
   
   .col{

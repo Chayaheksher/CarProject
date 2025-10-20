@@ -60,11 +60,7 @@ export const returnBorrow = (req, res) => {
     }
     theReturn.save()
     .then(async r => {
-        // const borrow = await Borrows.findOne({borrowId}).exec()
         const borrow = await Borrows.findById(borrowId).exec();
-        // if(borrow){
-        //     const dateAndTime = getDate()
-        // }
         const carId = borrow.carId;
         const car = await Car.findById(carId).exec();
         console.log(car); 

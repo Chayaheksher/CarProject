@@ -7,15 +7,15 @@
 
 .card {
     width: 100%;
-    max-width: 300px;  /* רוחב קטן יותר */
-    min-height: 450px; /* גובה קטן יותר */
+    max-width: 300px;
+    min-height: 450px;
     background-color: rgb(176, 246, 220);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border: solid 0.2rem;
     margin: 1.5rem;
-    box-shadow: 3px 4px 7px rgba(0, 255, 255, 0.5); /* צל בצבע טיל */
+    box-shadow: 3px 4px 7px rgba(0, 255, 255, 0.5);
 
 }
 

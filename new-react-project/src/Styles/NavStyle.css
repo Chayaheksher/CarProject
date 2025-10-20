@@ -1,17 +1,17 @@
 .nav-container {
     display: flex;
-    justify-content: center; /* ממרכז את כל הפריטים */
+    justify-content: center;
     align-items: center;
-    background-color: #008080; /* Teal */
+    background-color: #008080;
     padding: 12px 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* צל עדין יותר */
-    border-radius: 0 0 10px 10px; /* עיגול בפינות התחתונות */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
     position: relative;
 }
 
 .sign {
     position: absolute;
-    left: 20px; /* מרחיק את ההתחברות לצד שמאל */
+    left: 20px;
     display: flex;
     align-items: center;
     color: white;
@@ -22,7 +22,7 @@
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 8px; /* רווח בין האייקון לטקסט */
+    gap: 8px; 
     color: white;
     font-size: 17px;
     text-decoration: none;
@@ -33,7 +33,7 @@
 }
 
 .nav-item:hover {
-    background-color: #20a090; /* Teal בהיר */
+    background-color: #20a090;
     transform: translateY(-2px);
 }
 
@@ -46,20 +46,20 @@ i{
 }
 .logo-container {
     position: absolute;
-    right: 20px; /* מיקום בצד ימין */
+    right: 20px;
 }
 
 .nav-logo {
-    width: 50px; /* גודל לוגו */
+    width: 50px;
     height: auto;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
     border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.5); /* צל בצבע טיל */
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.5); 
 }
 
 .nav-logo:hover {
     transform: scale(1.1);
-    box-shadow: 5px 8px 15px rgba(0, 255, 255, 0.5); /* צל בצבע טיל */
+    box-shadow: 5px 8px 15px rgba(0, 255, 255, 0.5);
 
 }

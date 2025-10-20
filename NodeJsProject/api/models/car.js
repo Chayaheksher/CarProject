@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const carSchema = mongoose.Schema({
-    // _id: mongoose.Schema.Types.ObjectId,
     licenseNumber: {
         type: String,
         require: true

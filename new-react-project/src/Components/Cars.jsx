@@ -46,13 +46,9 @@ export const Cars = () => {
                 case 0:
                     const response = await allCarModels();
                     console.log("Car Models Response:", response.data);
-                    // data = response.data.map(item => ({
-                    //     model: item.model,
-                    //     company: item.company // הוספת החברה
-                    // })) || [];
                     data = response.data.map(item =>
                         item.model + " " +
-                        item.company // הוספת החברה
+                        item.company
                     ) || [];
                     console.log(data, "ddddaaaattttttaaaaa")
                     break;
@@ -109,13 +105,11 @@ export const Cars = () => {
             <SearchCombo
                 filters={filters}
                 fetchFilterData={fetchFilterData}
-                filterData={currentFilterData} // ודא שזה מעביר את הנתונים הנכונים
+                filterData={currentFilterData}
                 fetchResultsFromServer={fetchCars}
             />
             {console.log(user.usersTypeId)}
             {user.usersTypeId === "67951e432b447fb00a5c9e86" && <div style={{ marginLeft: "50%" }}>
-                {/* <Button style={{ marginLeft: "5%" }} label="סוגי הנעה" icon="pi pi-bolt" onClick={() => navigate(`/driveTypes`)} />
-                <Button style={{ marginRight: "60%" }} label="דגמים" icon="pi pi-cog" onClick={() => navigate(`/displayModels`)} /> */}
                 <Button icon="pi pi-plus" onClick={() => navigate('addCar')} tooltip="הוספת רכב" tooltipOptions={{ position: "top" }} />
             </div>}
 

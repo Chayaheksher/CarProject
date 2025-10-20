@@ -31,7 +31,6 @@ export const DriveTypes = () => {
             })
     }
     return <>
-        {/* <h1 style={{ textAlign: 'center', color: 'teal', margin: '20px 0', fontSize: '2.5rem' }}>סוגי הנעת רכב</h1> */}
         <div className="tbl-container">
             <DataTable value={data} className="custom-table">
                 <Column className='col' field="description" header="תיאור"></Column>

@@ -12,7 +12,6 @@
     justify-content: center;
 }
 
-/* שכבת כהות מעל התמונה */
 .home-container::before {
     content: "";
     position: absolute;
@@ -20,19 +19,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* שכבת כהות 60% */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
-/* כל התוכן ישמור על סדר תקין מעל שכבת הכהות */
 .home-container > * {
     position: relative;
     z-index: 2;
 }
 
-/* מסגרת לכותרת */
 .title-box {
-    background-color: rgba(0, 128, 128, 0.8); /* צבע teal שקוף */
+    background-color: rgba(0, 128, 128, 0.8);
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -47,7 +44,6 @@
     margin-bottom: 20px;
     font-size: 2.5rem;
     color: white;
-    /* background-color: #f0f0f0; */
     border: solid 1px rgb(176, 246, 220);
     padding: 10px 20px;
     border-radius: 10px;
@@ -79,13 +75,12 @@
 .sign-in-btn {
     margin-top: 20px;
 }
-/* מבטיח שכל פריט בקרוסלה יהיה במרכז */
+
 .p-carousel-item {
     display: flex;
     justify-content: center;
 }
 
-/* ממרכז את התמונה בתוך כל פריט */
 .car-item {
     display: flex;
     flex-direction: column;
@@ -94,18 +89,16 @@
     width: 100%;
 }
 
-/* קביעת גודל לתמונות כך שלא יהיו גדולות מדי */
 .car-item img {
-    max-width: 70%; /* ניתן לשנות לגודל רצוי */
+    max-width: 70%;
     height: auto;
     border-radius: 10px;
 }
 .car-logo {
     margin: 20px;
     display: block;
-    /* box-shadow: 0 4px 8px rgba(0, 128, 128, 0.5);  */
     border-radius: 10px;
 }
 .teal-shadow {
-    box-shadow: 20px 20px 15px rgba(0, 128, 128, 0.5); /* צל בצבע teal */
+    box-shadow: 20px 20px 15px rgba(0, 128, 128, 0.5);
 }

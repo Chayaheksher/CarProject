@@ -20,8 +20,8 @@ export const MakeBorrow = () => {
     const send = (sI) => {
         sI.preventDefault()
         console.log(sI);
-        const date = dateTime.toLocaleDateString('en-GB'); // פורמט תאריך
-        const time = dateTime.toLocaleTimeString('en-GB'); // פורמט שעה
+        const date = dateTime.toLocaleDateString('en-GB');
+        const time = dateTime.toLocaleTimeString('en-GB');
         let borrow = {
             carId: car._id,
             userId: user._id,
@@ -36,8 +36,6 @@ export const MakeBorrow = () => {
         addBorrow(borrow, token)
             .then((res) => {
                 swal(`השאלת רכב  ${sI.target[0].value}!`, 'הצליחה', 'success')
-                console.log(res);
-                console.log(user, "hhhhhhhhhhhhhhhhhhhhhhhhhhhiiiiiiiiiiiiiiiiiiiiiii")
             })
             .catch((err) => {
                 swal(`השאלת רכב ${car.licenseNumber}!`, 'לא הצליחה', 'success')

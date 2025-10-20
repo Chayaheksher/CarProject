@@ -39,17 +39,14 @@ export const SignUp = () => {
             .then((res) => {
                 console.log(res, 'הרשמה');
                 swal(`שלום ${res.data.u.userName}!`, 'הצלחת להרשם', 'success')
-                // localStorage.setItem('user', JSON.stringify(res.data));
-                const token = res.data.token; // ודאי שהטוקן נמצא במיקום הנכון
-                dispatch(setToken(token)) // שמירה של הטוקן ב-session storage
+                const token = res.data.token;
+                dispatch(setToken(token)) 
                 dispatch(setUser(res.data.u))
                 navigate(`/cars`)
-                // window.location.reload(); // רענון הדף כדי לעדכן את הניווט
                 closeDialog();
             })
             .catch((err) => {
                 swal(` ${sU.target[0].value}!`, 'שגיאה בנתונים', 'error')
-                // closeDialog();
                 console.log(err);
             });
     }

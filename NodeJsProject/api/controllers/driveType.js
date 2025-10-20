@@ -1,6 +1,5 @@
 import DriveType from "../models/driveType.js";
 
-//עדכון מחיר סוד הנעה
 export const updatePrice = (req, res) => {
         const {driveTypeId} = req.params
         const { pricePerLiter } = req.body;
@@ -14,7 +13,6 @@ export const updatePrice = (req, res) => {
         })
 }
 
-//שליפת כל סוגי הנעה
 export const allDriveType = (req, res) => {
     DriveType.find()
     .then(dt=>{

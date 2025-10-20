@@ -21,41 +21,7 @@ export const AddCar = () => {
     const [driveType, setDriveType] = useState([]);
     const [selectedDriveType, setSelectedDriveType] = useState();
     const [file, setFile] = useState(null);
-    const [ingredient, setIngredient] = useState(false);
-    // const send = (sI) => {
-    //     sI.preventDefault()
-    //     console.log(sI.target);
-    //     let car = {
-    //         licenseNumber: sI.target.elements.NUM.value,
-    //         carModelsId: selectedModel,
-    //         numberOfSeats: parseInt(sI.target.elements.SE.value, 10),
-    //         image: '/car23.png',
-    //         year: sI.target.elements.YE.value,
-    //         isGears: ingredient,
-    //         driveTypesId: selectedDriveType,
-    //         pricePerHour: parseInt(sI.target.elements.PM.value),
-    //         needPerKm: parseInt(sI.target.elements.NK.value),
-    //         balanceInLiters: parseInt(sI.target.elements.YL.value),
-    //         city: sI.target.elements.CT.value,
-    //         street: sI.target.elements.ST.value
-    //     };
-    //     console.log(car);
-    //     if (!car.licenseNumber || !car.carModelsId || !car.numberOfSeats || !car.image || !car.year || car.isGears === undefined || !car.driveTypesId || !car.pricePerHour || !car.needPerKm || !car.balanceInLiters || !car.city || !car.street) {
-    //         swal('אויי!', 'מילוי כל השדות - חובה!', 'error');
-    //         return;
-    //     }
-
-    //     addCar(car)
-    //         .then((res) => {
-    //             console.log(res);
-    //             swal(`הרכב ${car.licenseNumber} נוסף בהצלחה`, 'הצלחת להוסיף', 'success')
-    //         })
-    //         .catch((err) => {
-    //             swal(` ${sI.target[0].value}!`, 'שגיאה בנתונים', 'error')
-    //             console.log(err);
-    //         });
-    //     closeDialog();
-    // }
+    const [ingredient, setIngredient] = useState(false)
     const send = (sI) => {
         sI.preventDefault();
 
@@ -76,11 +42,11 @@ export const AddCar = () => {
         formData.append("balanceInLiters", parseInt(sI.target.elements.YL.value));
         formData.append("city", sI.target.elements.CT.value);
         formData.append("street", sI.target.elements.ST.value);
-        formData.append("image", file);  // 👈 שולחים את הקובץ
+        formData.append("image", file);  
 
         console.log("FormData Sent:", formData);
 
-        addCar(formData, token)  // שולחים עם טוקן לאימות
+        addCar(formData, token) 
             .then((res) => {
                 console.log(res);
                 swal(`הרכב נוסף בהצלחה`, 'הצלחת להוסיף', 'success');
@@ -100,7 +66,6 @@ export const AddCar = () => {
     useEffect(() => {
         if (!token) { navigate('/signIn'); return };
         setIsOpen(true)
-        //////
         fetchAllModels()
         fetchAllDriveTypes()
     }, []);
@@ -122,8 +87,8 @@ export const AddCar = () => {
             .then((res) => {
                 console.log(res.data);
                 const formattedModels = res.data.map(car => ({
-                    name: `${car.company} ${car.model}`, // הצגת שם החברה והמודל
-                    value: car._id // שמירת ה-ID כערך
+                    name: `${car.company} ${car.model}`,
+                    value: car._id
                 }));
                 setModels(formattedModels);
             })

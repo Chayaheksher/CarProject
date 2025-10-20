@@ -13,7 +13,7 @@ export const DisplayBorrow = () => {
   const user = useSelector(state => state.user);
   const [borrow, serBorrow] = useState([]);
   useEffect(() => {
-    if (!user?.token) {navigate('/signIn'); return}; // אם אין טוקן, הפונקציה תצא מיד
+    if (!user?.token) {navigate('/signIn'); return};
     if (location.state?.deleted || location.state?.updated || location.state?.added) {
       fetchBorrows();
     }
@@ -55,7 +55,6 @@ export const DisplayBorrow = () => {
           body={(rowData) => (rowData.returnDate!==null ? <i className="pi pi-check" style={{ color: 'green' }}></i> : <i className="pi pi-times" style={{ color: 'red' }}></i>)} > 
           </Column>}
           
-          {/* {user.usersTypeId === "67951e432b447fb00a5c9e87" &&  */}
         <Column className='col'
           body={(rowData) => (
             rowData.returnDate===null ? (
@@ -68,7 +67,6 @@ export const DisplayBorrow = () => {
             ): ""
           )}
         ></Column>
-        {/* } */}
       </DataTable>
     </div>
     <Outlet></Outlet>
